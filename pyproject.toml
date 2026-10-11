@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deconstructing-machine"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
     {name="Machina Ratiocinatrix", email="machina.ratio@gmail.com"},
     {name="Alexander Fedotov", email="alex.fedotov@aol.com"}
@@ -24,6 +24,7 @@ dependencies = [
 
 [project.scripts]
 deconstructing-machine = "deconstructing_machine.cli:run"
+deconstruct = "deconstructing_machine.cli:run"
 
 [project.urls]
 "Homepage" = "https://github.com/deconstructing-machine/deconstructing-machine"
