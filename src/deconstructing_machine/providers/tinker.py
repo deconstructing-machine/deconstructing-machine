@@ -39,7 +39,7 @@ def respond(messages=None, instructions=None, tools=None, **kwargs):
         'messages': instruction_and_contents,
         # 'response_format':          kwargs.get('response_format',{'type': 'text'}),
         'temperature': kwargs.get('temperature', 1),  # 0.0 to 2.0
-        'max_tokens': kwargs.get('max_tokens', 4096),
+        'max_tokens': kwargs.get('max_tokens', 256000),
         'n': kwargs.get('n', 1),
         'top_p': kwargs.get('top_p', 0.9),
         'separate_reasoning': True,
@@ -58,7 +58,7 @@ def respond(messages=None, instructions=None, tools=None, **kwargs):
     # Try to query
     try:
         # Execute the request
-        with urllib.request.urlopen(req, timeout=3000) as response:
+        with urllib.request.urlopen(req, timeout=30000) as response:
             response_data = response.read().decode('utf-8')
             output = json.loads(response_data)
             completion_message = output['choices'][0]['message']
